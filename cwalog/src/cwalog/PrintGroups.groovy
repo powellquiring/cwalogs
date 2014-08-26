@@ -99,7 +99,7 @@ class PrintGroups {
 
         List<Value> cached = group.incompleteValues.findAll{Group.Value value -> (value.packageAvailable != 0) && (value.start == null) && (value.complete == null)}
         println "---- Total requests: ${completeValues.size() + cached.size()} due to requests with no restrictions satisfied from cache: ${cached.size()} cached:"
-        int allCachedOrders = cached.packageInCache.sum()
+        int allCachedOrders = cached ? cached.packageInCache.sum() : 0
         int partialCachedOrders = group.completeValues.packageInCache.sum()
         println "total: ${allCachedOrders + partialCachedOrders} = all cached $allCachedOrders + partial cache $partialCachedOrders"
         

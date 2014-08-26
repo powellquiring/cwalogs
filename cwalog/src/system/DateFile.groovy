@@ -26,8 +26,7 @@ class DateFile {
         Date date = fileToDate(file)
         if (date == null) return false
         if (date.year != (2014 - 1900)) return false
-        if (date.month <= 3) return false
-        if (date.month >= 6) return false
+        if (date.month <= 2) return false
         if (date.day == 2) {
              return true
         }

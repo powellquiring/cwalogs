@@ -4,6 +4,7 @@ class StandardOutToFile {
 	final PrintStream oldSystemOut
 	final OutputStream tee
 	final File outFile
+    final OutputStream outFileStream
     final File finalOutFile
     
     // return a 
@@ -33,7 +34,8 @@ class StandardOutToFile {
             this.outFile = outFile
         }
         this.outFile.getParentFile().mkdirs()
-        tee = new TeeOutputStream((OutputStream)System.out, this.outFile.newOutputStream())
+        outFileStream = this.outFile.newOutputStream()
+        tee = new TeeOutputStream((OutputStream)System.out, outFileStream)
         oldSystemOut = System.out
         System.out = new PrintStream(tee)
     } 
@@ -44,7 +46,8 @@ class StandardOutToFile {
 	}
     
     void close() {
-        tee.close();
+        
+        outFileStream.close();
         if(finalOutFile) {
             assert outFile.renameTo(finalOutFile)
         }
