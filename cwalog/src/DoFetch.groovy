@@ -1,0 +1,1 @@
+cwalog.Fetch.instance.main()
