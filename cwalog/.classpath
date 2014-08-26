@@ -4,5 +4,9 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
 	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="jars/nekohtml-1.9.20/nekohtml.jar"/>
+	<classpathentry kind="lib" path="jars/xerces-2_11_0/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="jars/xerces-2_11_0/xml-apis.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
